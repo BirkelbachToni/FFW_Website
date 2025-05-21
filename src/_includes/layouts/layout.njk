@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ title | default("Freiwillige Feuerwehr Wasserknoden") }}</title>
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://maps.googleapis.com;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Tailwind CSS (via Webpack) -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Favicon (in /src/assets/) -->
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-50 font-sans">
+  <!-- Header -->
+  {% include "partials/header.njk" %}
+
+  <!-- Hauptinhalt -->
+  <main class="container mx-auto px-4 py-8">
+    {{ content | safe }}
+  </main>
+
+  <!-- Footer -->
+  {% include "partials/footer.njk" %}
+
+  <!-- Skripte -->
+  <script src="/js/bundle.js" defer></script>
+
+  <!-- reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=DEIN_SITE_KEY"></script>
+  <script>
+    grecaptcha.ready(() => {
+      grecaptcha.execute('DEIN_SITE_KEY', { action: 'homepage' });
+    });
+  </script>
+</body>
+</html>
