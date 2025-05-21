@@ -1,0 +1,51 @@
+### IDE ###
+# WebStorm/IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+### Node ###
+# Abhängigkeiten
+node_modules/
+
+# Build-Ordner
+dist/
+
+# npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+### System ###
+# OS-spezifisch
+.DS_Store
+Thumbs.db
+
+# Temporäre Dateien
+*.tmp
+*.bak
+*.swp
+*~
+~$*
+
+### Projektabhängig ###
+# Webpack Cache
+.webpack/
+
+# 11ty Cache
+.cache/
+
+# Tailwind
+*.css.map
