@@ -16,6 +16,25 @@
   <!-- Favicon (in /src/assets/) -->
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
+  <!-- reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js?render={{ env.recaptchaSiteKey }}"></script>
+<script>
+  grecaptcha.ready(() => {
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        grecaptcha.execute('{{ env.recaptchaSiteKey }}', {
+          action: form.id || 'contact'
+        }).then(token => {
+          const tokenField = form.querySelector('[name="g-recaptcha-response"]');
+          if (tokenField) tokenField.value = token;
+          form.submit();
+        });
+      });
+    });
+  });
+</script>
+
 <body class="bg-gray-50 font-sans">
   <!-- Header -->
   {% include "partials/header.njk" %}

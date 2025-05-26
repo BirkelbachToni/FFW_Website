@@ -40,6 +40,11 @@ Thumbs.db
 *~
 ~$*
 
+# Zertifikate
+*.crt
+*.key
+*.pem
+
 ### Projektabhängig ###
 # Webpack Cache
 .webpack/

@@ -1,0 +1,16 @@
+<IfModule mod_headers.c>
+  # Content Security Policy (CSP)
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://maps.googleapis.com; font-src 'self'; frame-src https://www.google.com"
+
+  # XSS-Schutz
+  Header set X-XSS-Protection "1; mode=block"
+
+  # Clickjacking-Schutz
+  Header set X-Frame-Options "DENY"
+
+  # MIME-Type-Sniffing verhindern
+  Header set X-Content-Type-Options "nosniff"
+
+  # HSTS (nur aktivieren wenn HTTPS läuft!)
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
