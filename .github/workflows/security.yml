@@ -1,0 +1,14 @@
+name: Security Checks
+on: [push]
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: npm audit
+        run: npm audit
+      - name: Snyk Scan
+        uses: snyk/actions/node@master
+        with:
+          command: monitor
+          args: --org=DEIN_ORG_NAME

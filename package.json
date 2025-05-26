@@ -3,15 +3,12 @@
   "scripts": {
     "build": "webpack --mode=production && eleventy",
     "watch": "webpack --watch & eleventy --serve",
-    "postcss:build": "postcss src/css/styles.css -o dist/css/styles.css",
-    "postcss:watch": "postcss src/css/styles.css -o dist/css/styles.css --watch"
+    "postcss:build": "postcss src/css/main.css -o dist/css/main.css",
+    "postcss:watch": "postcss src/css/main.css -o dist/css/main.css --watch"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.1.0",
     "@tailwindcss/postcss": "^4.1.7",
-    "postcss": "^8.5.3",
-    "postcss-cli": "^11.0.1",
-    "tailwindcss": "^4.1.7"
+    "postcss-cli": "^11.0.1"
   },
   "name": "ffw_website",
   "version": "1.0.0",
@@ -29,9 +26,21 @@
   },
   "homepage": "https://github.com/BirkelbachToni/FFW_Website#readme",
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "^10.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
     "mini-css-extract-plugin": "^2.9.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.3",
+    "postcss-import": "^16.1.0",
     "postcss-loader": "^8.1.1",
+    "tailwindcss": "^4.1.7",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1"
   }

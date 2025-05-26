@@ -1,17 +1,20 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { fileURLToPath } from 'url';
 
-module.exports = {
-    entry: './src/js/main.js', // Haupt-JS-Datei
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
+    entry: './src/js/main.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist/js'),
         publicPath: '/js/'
     },
-    mode: 'production', // Für Entwicklung auf 'development' wechseln
+    mode: 'production',
     module: {
         rules: [
-            // CSS & Tailwind
             {
                 test: /\.css$/,
                 use: [
@@ -27,7 +30,6 @@ module.exports = {
                     }
                 ]
             },
-            // JavaScript (Babel für Kompatibilität)
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -42,7 +44,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '../css/styles.css' // Output in /dist/css/
+            filename: '../css/main.css'
         })
     ]
 };
