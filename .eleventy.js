@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import { DateTime } from 'luxon';
 
 dotenv.config();
 
@@ -14,6 +15,11 @@ export default function(eleventyConfig) {
             key: "localhost-key.pem",
             cert: "localhost.pem"
         }
+    });
+
+    // date-Filter für Datumformatierung
+    eleventyConfig.addFilter("date", (value, format = "yyyy") => {
+        return DateTime.fromJSDate(value).toFormat(format);
     });
 
     // Statische Dateien kopieren
