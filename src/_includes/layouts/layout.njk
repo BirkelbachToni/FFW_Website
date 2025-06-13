@@ -16,7 +16,7 @@
   <!-- Favicon (in /src/assets/) -->
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
-  <!-- reCAPTCHA -->
+<!-- reCAPTCHA -->
 <script src="https://www.google.com/recaptcha/api.js?render={{ env.recaptchaSiteKey }}"></script>
 <script>
   grecaptcha.ready(() => {
@@ -50,12 +50,5 @@
   <!-- Skripte -->
   <script src="/js/bundle.js" defer></script>
 
-  <!-- reCAPTCHA v3 -->
-  <script src="https://www.google.com/recaptcha/api.js?render=DEIN_SITE_KEY"></script>
-  <script>
-    grecaptcha.ready(() => {
-      grecaptcha.execute('DEIN_SITE_KEY', { action: 'homepage' });
-    });
-  </script>
 </body>
 </html>

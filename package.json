@@ -1,13 +1,16 @@
 {
   "type": "module",
   "scripts": {
-    "build": "webpack --mode=production && eleventy",
-    "watch": "webpack --watch & eleventy --serve",
-    "postcss:build": "postcss src/css/main.css -o dist/css/main.css",
-    "postcss:watch": "postcss src/css/main.css -o dist/css/main.css --watch"
+    "dev:webpack": "webpack --mode=development --watch",
+    "dev:eleventy": "eleventy --serve",
+    "dev": "npm-run-all --parallel dev:*",
+    "build:webpack": "webpack --mode=production",
+    "build:eleventy": "eleventy",
+    "build": "npm-run-all build:webpack build:eleventy"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.7",
+    "dotenv": "^16.5.0",
     "postcss-cli": "^11.0.1"
   },
   "name": "ffw_website",

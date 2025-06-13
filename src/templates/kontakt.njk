@@ -2,22 +2,12 @@
 layout: layouts/layout.njk
 title: Kontakt
 ---
-<form id="contact-form" action="https://formspree.io/f/DEIN_FORMSPREE_ID" method="POST">
-  <input type="hidden" name="g-recaptcha-response">
-
-  <div class="mb-4">
-    <label for="name" class="block">Name</label>
-    <input type="text" id="name" name="name" required class="w-full p-2 border">
-  </div>
-
-  <button type="submit" class="bg-red-600 text-white px-4 py-2">Absenden</button>
-</form>
 
 <div class="max-w-2xl mx-auto bg-white p-8 shadow-lg rounded-lg">
   <h2 class="text-2xl font-bold mb-6">Kontaktformular</h2>
-  <form action="https://formspree.io/f/DEIN_FORM_ID" method="POST" class="space-y-4">
+  <form id="contact-form" action="https://formspree.io/f/mvgraega" method="POST" class="space-y-4">
     <input type="hidden" name="_subject" value="Kontaktanfrage FFW Website">
-    <input type="hidden" id="recaptcha-token" name="g-recaptcha-response">
+    <input type="hidden" name="g-recaptcha-response">
 
     <div>
       <label for="name" class="block mb-1">Name</label>
