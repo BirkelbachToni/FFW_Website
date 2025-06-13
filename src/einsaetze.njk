@@ -1,0 +1,150 @@
+---
+layout: layouts/layout.njk
+title: Einsatzberichte - Freiwillige Feuerwehr Wasserknoden
+---
+
+<!-- Hero-Bereich -->
+<section class="bg-fw-red-500 text-white py-12">
+  <div class="container mx-auto px-4">
+    <h1 class="text-3xl md:text-4xl font-bold mb-2">Einsatzberichte</h1>
+    <p class="text-xl">Übersicht aller Einsätze der Freiwilligen Feuerwehr Wasserknoden</p>
+  </div>
+</section>
+
+<!-- Filter-Bereich -->
+<section class="bg-gray-50 py-6 border-b">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row md:items-end gap-4">
+      <div class="w-full md:w-1/4">
+        <label for="year" class="block text-sm font-medium text-gray-700 mb-1">Jahr</label>
+        <select id="year" class="w-full rounded-md border-gray-300 shadow-sm focus:border-fw-red-500 focus:ring focus:ring-fw-red-200">
+          <option value="all">Alle Jahre</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+        </select>
+      </div>
+
+      <div class="w-full md:w-1/4">
+        <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Einsatzart</label>
+        <select id="category" class="w-full rounded-md border-gray-300 shadow-sm focus:border-fw-red-500 focus:ring focus:ring-fw-red-200">
+          <option value="all">Alle Einsatzarten</option>
+          <option value="brand">Brandbekämpfung</option>
+          <option value="hilfe">Technische Hilfeleistung</option>
+          <option value="wasser">Wasserschaden</option>
+          <option value="unwetter">Unwetterschaden</option>
+          <option value="sonstige">Sonstige Einsätze</option>
+        </select>
+      </div>
+
+      <div class="w-full md:w-2/4 flex gap-2">
+        <input type="text" id="search" placeholder="Suchbegriff eingeben..."
+               class="w-full rounded-md border-gray-300 shadow-sm focus:border-fw-red-500 focus:ring focus:ring-fw-red-200">
+        <button id="filter-button"
+                class="bg-fw-red-500 text-white px-4 py-2 rounded-md hover:bg-fw-red-600 transition duration-300 font-medium">
+          Filtern
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Einsatz-Liste -->
+<section class="py-8">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center mb-6">
+      <p><span id="einsatz-count" class="font-bold">24</span> Einsätze gefunden</p>
+      <div class="text-sm text-gray-500">
+        Sortieren nach:
+        <select id="sort" class="border-gray-200 rounded-md text-sm">
+          <option value="date-desc">Datum (neueste zuerst)</option>
+          <option value="date-asc">Datum (älteste zuerst)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Einsatzliste -->
+    <div id="einsatz-liste" class="space-y-6">
+      <!-- Einsatz 1 -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+        <div class="md:flex">
+          <div class="md:w-1/4 bg-gray-200">
+            <img src="/assets/images/einsatz1.jpg" alt="Sturmschäden" class="w-full h-full object-cover md:h-48">
+          </div>
+          <div class="p-6 md:w-3/4">
+            <div class="flex flex-wrap justify-between mb-2">
+              <span class="inline-block bg-fw-red-100 text-fw-red-800 px-2 py-1 text-xs font-semibold rounded-md">
+                Technische Hilfeleistung
+              </span>
+              <span class="text-gray-500 text-sm">02. Juli 2023</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Sturmschäden beseitigt</h3>
+            <p class="text-gray-600 mb-4">Nach dem gestrigen Unwetter wurden mehrere umgestürzte Bäume von Straßen und Wegen beseitigt. Der Einsatz dauerte etwa drei Stunden.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Einsatzdauer: 3 Stunden</span>
+
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span>12 Einsatzkräfte</span>
+            </div>
+            <a href="/einsaetze/sturmschaeden-2023-07-02" class="inline-block mt-4 text-fw-red-500 font-medium hover:text-fw-red-700">
+              Weiterlesen →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Einsatz 2 -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+        <div class="md:flex">
+          <div class="md:w-1/4 bg-gray-200">
+            <img src="/assets/images/einsatz2.jpg" alt="Küchenbrand" class="w-full h-full object-cover md:h-48">
+          </div>
+          <div class="p-6 md:w-3/4">
+            <div class="flex flex-wrap justify-between mb-2">
+              <span class="inline-block bg-fw-red-100 text-fw-red-800 px-2 py-1 text-xs font-semibold rounded-md">
+                Brandbekämpfung
+              </span>
+              <span class="text-gray-500 text-sm">28. Juni 2023</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Küchenbrand</h3>
+            <p class="text-gray-600 mb-4">In der Hauptstraße konnte ein Küchenbrand schnell unter Kontrolle gebracht werden. Die Bewohner hatten das Haus bereits verlassen, es gab keine Verletzten.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Einsatzdauer: 1,5 Stunden</span>
+
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span>18 Einsatzkräfte</span>
+            </div>
+            <a href="/einsaetze/kuechenbrand-2023-06-28" class="inline-block mt-4 text-fw-red-500 font-medium hover:text-fw-red-700">
+              Weiterlesen →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-8 flex justify-center">
+      <nav class="inline-flex rounded-md shadow-sm">
+        <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">Zurück</a>
+        <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-fw-red-500 text-white">1</a>
+        <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">2</a>
+        <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">3</a>
+        <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">Weiter</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<script src="/js/modules/filter.js"></script>
