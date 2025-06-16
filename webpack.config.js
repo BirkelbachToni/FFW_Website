@@ -10,7 +10,8 @@ export default {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist/js'),
-        publicPath: '/js/'
+        publicPath: '/js/',
+        assetModuleFilename: '../assets/images/[name][ext]'
     },
     mode: 'production',
     module: {
@@ -21,12 +22,7 @@ export default {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     {
-                        loader: 'postcss-loader',
-                        options: {
-                            postcssOptions: {
-                                config: path.resolve(__dirname, 'postcss.config.js')
-                            }
-                        }
+                        loader: 'postcss-loader'
                     }
                 ]
             },
@@ -38,6 +34,13 @@ export default {
                     options: {
                         presets: ['@babel/preset-env']
                     }
+                }
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: '../assets/images/[name][ext]'
                 }
             }
         ]

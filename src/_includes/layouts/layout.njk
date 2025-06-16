@@ -7,11 +7,11 @@
   <title>{{ title | default("Freiwillige Feuerwehr Wasserknoden") }}</title>
 
   <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://maps.googleapis.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src https://www.google.com;">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- Tailwind CSS (via Webpack) -->
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/main.css">
 
   <!-- Favicon (in /src/assets/) -->
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">

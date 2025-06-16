@@ -9,6 +9,11 @@ export default function(eleventyConfig) {
         recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY || "FALLBACK_KEY_FUR_ENTWICKLUNG"
     });
 
+    // Nunjucks-Filter für assetPath
+    eleventyConfig.addNunjucksGlobal("assetPath", function(path) {
+        return `/assets${path}`;
+    });
+
     // BrowserSync-Konfig (für Live-Reload)
     eleventyConfig.setBrowserSyncConfig({
         https: {
